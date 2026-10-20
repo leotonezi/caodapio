@@ -1,11 +1,11 @@
 import { useCallback, useEffect, useState } from 'react'
 import { supabaseHouseholdRepository } from '../../data/supabase/household-repository'
 import type { HouseholdSummary } from '../../data/repositories/household'
+import { HojePage } from '../hoje/HojePage'
 import { t } from '../../i18n/pt-BR'
 import { CreateOrJoinForm } from './CreateOrJoinForm'
-import { HouseholdSummaryView } from './HouseholdSummaryView'
 
-export function HouseholdScreen() {
+export function HouseholdScreen({ userId }: { userId: string }) {
   const [household, setHousehold] = useState<HouseholdSummary | null | 'loading'>('loading')
 
   const reload = useCallback(() => {
@@ -29,5 +29,5 @@ export function HouseholdScreen() {
     return <CreateOrJoinForm onDone={reload} />
   }
 
-  return <HouseholdSummaryView household={household} />
+  return <HojePage household={household} userId={userId} />
 }

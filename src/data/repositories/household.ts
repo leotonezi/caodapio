@@ -6,6 +6,7 @@ export interface HouseholdMember {
 export interface HouseholdSummary {
   id: string
   name: string
+  dogId: string
   dogName: string
   members: HouseholdMember[]
 }

@@ -9,7 +9,7 @@ function App() {
     return <div className="flex min-h-screen items-center justify-center bg-white dark:bg-neutral-900" />
   }
 
-  return session ? <HouseholdScreen /> : <LoginPage />
+  return session ? <HouseholdScreen userId={session.user.id} /> : <LoginPage />
 }
 
 export default App

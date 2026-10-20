@@ -41,7 +41,7 @@ export const supabaseHouseholdRepository: HouseholdRepository = {
           .from('household_members')
           .select('user_id, display_name')
           .eq('household_id', householdId),
-        supabase.from('dogs').select('name').eq('household_id', householdId).limit(1),
+        supabase.from('dogs').select('id, name').eq('household_id', householdId).limit(1),
       ])
     if (membersError) throw membersError
     if (dogsError) throw dogsError
@@ -49,6 +49,7 @@ export const supabaseHouseholdRepository: HouseholdRepository = {
     return {
       id: householdId,
       name: membership.households.name,
+      dogId: dogs?.[0]?.id ?? '',
       dogName: dogs?.[0]?.name ?? '',
       members: (members ?? []).map((m) => ({
         userId: m.user_id,
