@@ -2,6 +2,13 @@
 
 **Cãodápio** (repo: `caodapio`). Shared web app for logging Ares's (dog) daily food against a vet nutritionist's plan. Full plan: `IMPLEMENTATION_PLAN.md`. Current phase spec: `docs/phases/`.
 
+## Principles
+- Prefer the simplest solution that works.
+- No new dependencies unless necessary.
+- No abstractions until there are 2+ real use cases.
+- Don't add features, config, or error handling that wasn't requested.
+- Ask before refactoring unrelated code.
+
 ## Language
 - Everything in the repo is in English: code, identifiers, files, comments, commits, PRs, docs, tests.
 - Everything the user sees is in Brazilian Portuguese (pt-BR), from `src/i18n/pt-BR.ts` via `t()`. Never hardcode UI text in components.
