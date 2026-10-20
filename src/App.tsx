@@ -1,9 +1,15 @@
+import { LoginPage } from './features/auth/LoginPage'
+import { useSession } from './features/auth/useSession'
+import { HouseholdScreen } from './features/household/HouseholdScreen'
+
 function App() {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-white text-neutral-900 dark:bg-neutral-900 dark:text-white">
-      <h1 className="text-3xl font-semibold">Cãodápio</h1>
-    </div>
-  )
+  const { session, loading } = useSession()
+
+  if (loading) {
+    return <div className="flex min-h-screen items-center justify-center bg-white dark:bg-neutral-900" />
+  }
+
+  return session ? <HouseholdScreen /> : <LoginPage />
 }
 
 export default App
