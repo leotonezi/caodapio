@@ -28,9 +28,9 @@
 
 ## Workflow
 - Work only on the current phase. Start in plan mode and wait for approval.
-- Small, focused commits.
-- Before opening a PR: lint, typecheck, unit tests, build all pass. Run E2E when UI changed.
-- Open the PR, summarize what changed and anything you decided on your own, then stop.
+- Solo repo, no PRs: commit directly on `main`. Small, focused commits.
+- Before committing: lint, typecheck, unit tests, build all pass. Run E2E when UI changed.
+- After finishing a phase, summarize what changed and anything decided unilaterally, then stop.
 - If a spec is ambiguous or conflicts with this file, ask instead of guessing.
 
 ## Commands
